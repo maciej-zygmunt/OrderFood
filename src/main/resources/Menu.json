@@ -1,0 +1,46 @@
+{
+  "lunchMenu": {
+    "cuisines": [
+      {
+        "id": 1,
+        "name": "Polish",
+        "mainDishes": [
+          {
+            "name": "fish",
+            "price": 22.5
+          },
+          {
+            "name": "chicken",
+            "price": 24.3
+          },
+          {
+            "name": "dumplings",
+            "price": 28.50
+          }
+        ],
+        "desserts": [
+          {
+            "name": "ice-cream",
+            "price": 11.9
+          }
+        ]
+      }
+    ]
+  },
+  "drinkMenu": {
+    "drinks": [
+      {
+        "name": "cola",
+        "price": 5.0
+      },
+      {
+        "name": "coffee",
+        "price": 3.5
+      }
+    ],
+    "extras": [
+      "ice cubes",
+      "lemon"
+    ]
+  }
+}
