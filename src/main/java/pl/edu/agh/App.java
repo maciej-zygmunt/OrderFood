@@ -19,10 +19,8 @@ public class App {
         while(context.getState()!=null) {
             context.run();
         }
-        if(context.getCuisine()!= null) {
-            System.out.println("Cuisine     -> " + context.getCuisine());
-            System.out.println("Main Dish   -> " + context.getMainDish());
-            System.out.println("Dessert     -> " + context.getDessert());
+        if(!context.getBasket().getItems().empty()) {
+            System.out.println(context.getBasket());
         } else {
             System.out.println("Order canceled ");
         }

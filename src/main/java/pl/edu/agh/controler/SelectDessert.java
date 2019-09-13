@@ -15,9 +15,10 @@ public class SelectDessert implements State {
         int ans=context.selectAnswers(desserts.size());
         if(ans>=0) {
             Dish dessert = (Dish) desserts.get(ans);
-            context.setDessert(dessert);
+            context.getBasket().getItems().push(dessert);
             context.setState(null);
         } else {
+            context.getBasket().getItems().pop();
             context.setState(new SelectMainDish());
         }
 

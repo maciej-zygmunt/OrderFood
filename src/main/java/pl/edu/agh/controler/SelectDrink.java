@@ -16,10 +16,10 @@ public class SelectDrink implements State {
         int ans=context.selectAnswers(drinks.size());
         if(ans>=0) {
             Drink drink = drinks.get(ans);
-            //context.setList(context.getCuisine().getDesserts());
+            context.getBasket().getItems().push(drink);
             context.setState(new SelectExtras());
         } else {
-            //context.setList(context.getLunchMenu().getCuisines());
+            context.getBasket().getItems().pop();
             context.setState(new SelectOrderType());
         }
 

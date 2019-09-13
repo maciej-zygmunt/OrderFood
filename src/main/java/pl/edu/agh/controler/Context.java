@@ -1,46 +1,50 @@
 package pl.edu.agh.controler;
 
 import lombok.Data;
-import pl.edu.agh.model.Cuisine;
-import pl.edu.agh.model.Dish;
-import pl.edu.agh.model.LunchMenu;
-import pl.edu.agh.model.Menu;
+import pl.edu.agh.model.*;
 
+import java.text.MessageFormat;
 import java.util.List;
 import java.util.Scanner;
 
 @Data
 public class Context {
-    final private  String name;
+    public static final String PROVIDE_NUMBER_SINGLE = "Provide number 0..{0},-2 to go back ";
+    public static final String PROVIDE_NUMBER_MULTI = "Provide number 0..{0},-1 to finish -2 to go back ";
+    final private String name;
     final private Scanner scanner;
     final private Menu menu;
 
     private State state;
-    //private List list;
     private Cuisine cuisine;
-    private Dish mainDish;
-    private Dish dessert;
+    private Basket basket= new Basket();
 
     public void run() {
         state.run(this);
+
+        System.out.println("Your basket is:" +basket.getItems());
     }
 
-    public  int selectAnswers( int range) {
-        int a = 0;
-        String prompt="Provide number < ,-1 to go back ";
-        while(true) {
+    public int selectAnswers(int range) {
+        String prompt = PROVIDE_NUMBER_SINGLE;
+        return selectAnswers(range, prompt);
+    }
+
+    public int selectAnswers(int range, String prompt) {
+        while (true) {
+            String processedPrompt= MessageFormat.format(prompt,range-1);
+            System.out.println(processedPrompt);
             while (!scanner.hasNextInt()) {
-                System.out.println(prompt + range);
+                System.out.println(processedPrompt);
                 scanner.next();
             }
-            a = scanner.nextInt();
-            if(a==-1) {
+            int a = scanner.nextInt();
+            if (a < 0) {
                 return a;
-            }
-            if (a >= 0 && a < range) {
+            } else if (a >= 0 && a < range) {
                 return a;
             } else {
-                System.out.println(prompt + range);
+                System.out.println(processedPrompt);
                 continue;
             }
         }
