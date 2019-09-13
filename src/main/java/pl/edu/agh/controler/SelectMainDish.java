@@ -15,11 +15,10 @@ public class SelectMainDish  implements State{
         int ans=context.selectAnswers(mainDishes.size());
         if(ans>=0) {
             Dish mainDish = mainDishes.get(ans);
-            context.setMainDish(mainDish);
-            //context.setList(context.getCuisine().getDesserts());
+            context.getBasket().getItems().push(mainDish);
             context.setState(new SelectDessert());
         } else {
-            //context.setList(context.getLunchMenu().getCuisines());
+            context.getBasket().getItems().pop();
             context.setState(new SelectCuisine());
         }
     }

@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data
-public class Dish {
+public class Dish implements Item {
     final private String name;
     final private double price;
 }

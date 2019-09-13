@@ -2,7 +2,6 @@
   "lunchMenu": {
     "cuisines": [
       {
-        "id": 1,
         "name": "Polish",
         "mainDishes": [
           {
