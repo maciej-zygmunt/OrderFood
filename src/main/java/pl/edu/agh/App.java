@@ -20,9 +20,7 @@ public class App {
         while(context.getState()!=null) {
             context.run();
         }
-        if(!context.getBasket().empty()) {
-            System.out.println(context.getBasket().toOrderString());
-        } else {
+        if(context.getBasket().isEmpty()) {
             System.out.println("Order canceled ");
         }
 

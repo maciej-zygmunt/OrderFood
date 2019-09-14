@@ -16,13 +16,13 @@ public class OrderFoodTest
     @Test
     public void serializeJsonLunchMenuTest()
     {
-        List<ManuItem> mainDishes=List.of(
-                new ManuItem("fish",22.50),
-                new ManuItem("chicken",24.30)
+        List<MenuItem> mainDishes=List.of(
+                new MenuItem("fish",22.50),
+                new MenuItem("chicken",24.30)
 
         );
-        List<ManuItem> desserts=List.of(
-                new ManuItem("ice-cream",11.90)
+        List<MenuItem> desserts=List.of(
+                new MenuItem("ice-cream",11.90)
         );
         List<Cuisine> cuisines=List.of(
                 new Cuisine("Polish",mainDishes,desserts)
@@ -37,9 +37,9 @@ public class OrderFoodTest
     @Test
     public void serializeJsonDrinkMenuTest()
     {
-        List<ManuItem> drinks=List.of(
-          new ManuItem("cola", 5.00),
-          new ManuItem("coffee",3.50)
+        List<MenuItem> drinks=List.of(
+          new MenuItem("cola", 5.00),
+          new MenuItem("coffee",3.50)
         );
         List<String> extras = List.of(
                 "ice cubes",

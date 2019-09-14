@@ -7,8 +7,8 @@ import java.util.List;
 @Data
 public class Cuisine {
     final private String name;
-    final private List<ManuItem> mainDishes;
-    final private List<ManuItem> desserts;
+    final private List<MenuItem> mainDishes;
+    final private List<MenuItem> desserts;
 
 
 }

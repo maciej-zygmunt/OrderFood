@@ -23,6 +23,52 @@
             "price": 11.9
           }
         ]
+      },
+      {
+        "name": "Mexican",
+        "mainDishes": [
+          {
+            "name": "taco",
+            "price": 23.5
+          },
+          {
+            "name": "chicken",
+            "price": 24.3
+          },
+          {
+            "name": "tortilla",
+            "price": 18.50
+          }
+        ],
+        "desserts": [
+          {
+            "name": "papaya",
+            "price": 11.9
+          }
+        ]
+      },
+      {
+        "name": "Italian",
+        "mainDishes": [
+          {
+            "name": "spaghetti",
+            "price": 22.5
+          },
+          {
+            "name": "pizza",
+            "price": 24.3
+          },
+          {
+            "name": "tortellini",
+            "price": 28.50
+          }
+        ],
+        "desserts": [
+          {
+            "name": "tiramisu",
+            "price": 12.9
+          }
+        ]
       }
     ]
   },

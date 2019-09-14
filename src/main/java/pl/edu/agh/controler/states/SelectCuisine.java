@@ -9,11 +9,11 @@ import java.util.List;
 public class SelectCuisine implements State {
     @Override
     public void run(Context context) {
+        System.out.println("Select cuisine ");
         List<Cuisine> cuisines = context.getMenu().getLunchMenu().getCuisines();
         for (int i = 0; i <cuisines.size(); i++) {
             System.out.println(i + ":" + cuisines.get(i).getName());
         }
-        System.out.println("Select cuisine ");
         int ans = context.selectAnswers(cuisines.size());
         if (ans >= 0) {
             Cuisine cuisine = cuisines.get(ans);

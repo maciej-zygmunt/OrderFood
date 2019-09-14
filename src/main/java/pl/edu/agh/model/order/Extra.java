@@ -1,4 +1,4 @@
-package pl.edu.agh.model.menu;
+package pl.edu.agh.model.order;
 
 import lombok.Data;
 import pl.edu.agh.model.order.Item;
@@ -14,7 +14,9 @@ public class Extra implements Item {
     public String toOrderString() {
         StringBuilder sb= new StringBuilder();
         extras.forEach(c->sb.append(c+","));
-        sb.deleteCharAt(sb.length()-1);
+        if(sb.length()>0 ) {
+            sb.deleteCharAt(sb.length() - 1);
+        }
         return sb.toString();
 
     }

@@ -7,12 +7,12 @@ import java.text.MessageFormat;
 
 
 @Data
-public class ManuItem implements Item {
+public class MenuItem implements Item {
     final private String name;
     final private double price;
 
     @Override
     public String toOrderString() {
-        return MessageFormat.format(" {0} {1} ",name, price);
+        return MessageFormat.format("{0}: {1,number,#.00} ",name, price);
     }
 }

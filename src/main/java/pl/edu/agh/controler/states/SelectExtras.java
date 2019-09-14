@@ -3,7 +3,7 @@ package pl.edu.agh.controler.states;
 
 import pl.edu.agh.controler.Context;
 import pl.edu.agh.controler.State;
-import pl.edu.agh.model.menu.Extra;
+import pl.edu.agh.model.order.Extra;
 
 import java.util.List;
 
@@ -11,12 +11,12 @@ public class SelectExtras implements State {
     final private Extra extra=new Extra("Extras");
     @Override
     public void run(Context context) {
+        System.out.println("Select extra's");
         List<String> extras=context.getMenu().getDrinkMenu().getExtras();
 
         for (int j = 0; j < extras.size(); j++) {
             System.out.println(j+": "+extras.get(j) );
         }
-        System.out.println("Select extra's");
         int ans=context.selectAnswers(extras.size(),Context.PROVIDE_NUMBER_MULTI);
         if(ans>=0) {
             String selected = extras.get(ans);

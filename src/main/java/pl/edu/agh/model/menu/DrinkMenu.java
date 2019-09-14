@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class DrinkMenu {
-    final private List<ManuItem> drinks;
+    final private List<MenuItem> drinks;
     final private List<String> extras;
 }
