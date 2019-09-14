@@ -1,8 +1,9 @@
 package pl.edu.agh;
 
 import pl.edu.agh.controler.*;
+import pl.edu.agh.controler.states.SelectOrderType;
 import pl.edu.agh.dao.MenuDao;
-import pl.edu.agh.model.Menu;
+import pl.edu.agh.model.menu.Menu;
 
 import java.util.Scanner;
 
@@ -19,8 +20,8 @@ public class App {
         while(context.getState()!=null) {
             context.run();
         }
-        if(!context.getBasket().getItems().empty()) {
-            System.out.println(context.getBasket());
+        if(!context.getBasket().empty()) {
+            System.out.println(context.getBasket().toOrderString());
         } else {
             System.out.println("Order canceled ");
         }

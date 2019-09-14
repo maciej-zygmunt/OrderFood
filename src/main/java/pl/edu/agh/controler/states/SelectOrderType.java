@@ -1,4 +1,9 @@
-package pl.edu.agh.controler;
+package pl.edu.agh.controler.states;
+
+import pl.edu.agh.controler.Context;
+import pl.edu.agh.controler.State;
+import pl.edu.agh.controler.states.SelectCuisine;
+import pl.edu.agh.controler.states.SelectDrink;
 
 import java.util.List;
 

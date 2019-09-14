@@ -1,10 +1,11 @@
 package pl.edu.agh.controler;
 
 import lombok.Data;
-import pl.edu.agh.model.*;
+import pl.edu.agh.model.menu.Cuisine;
+import pl.edu.agh.model.menu.Menu;
+import pl.edu.agh.model.order.Basket;
 
 import java.text.MessageFormat;
-import java.util.List;
 import java.util.Scanner;
 
 @Data
@@ -22,7 +23,7 @@ public class Context {
     public void run() {
         state.run(this);
 
-        System.out.println("Your basket is:" +basket.getItems());
+        System.out.println(basket.toOrderString());
     }
 
     public int selectAnswers(int range) {
