@@ -22,7 +22,6 @@ public class Context {
 
     public void run() {
         state.run(this);
-
         System.out.println(basket.toOrderString());
     }
 

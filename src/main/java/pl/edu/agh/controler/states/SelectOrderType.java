@@ -11,6 +11,7 @@ public class SelectOrderType implements State {
 
     @Override
     public void run(Context context) {
+        System.out.println("Select order type ");
         List<String> orderTypes=List.of(
                 "Drink",
                 "Lunch"
@@ -18,7 +19,6 @@ public class SelectOrderType implements State {
         for (int i = 0; i < orderTypes.size(); i++) {
             System.out.println(i+ ":" +orderTypes.get(i));
         }
-        System.out.println("Select order type ");
         int ans = context.selectAnswers(orderTypes.size());
         switch (ans) {
             case 0:
