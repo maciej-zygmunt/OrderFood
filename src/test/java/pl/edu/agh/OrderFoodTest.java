@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.junit.Test;
 import pl.edu.agh.dao.MenuDao;
-import pl.edu.agh.model.*;
+import pl.edu.agh.model.menu.*;
 
 import java.util.List;
 
@@ -16,13 +16,13 @@ public class OrderFoodTest
     @Test
     public void serializeJsonLunchMenuTest()
     {
-        List<Dish> mainDishes=List.of(
-                new Dish("fish",22.50),
-                new Dish("chicken",24.30)
+        List<ManuItem> mainDishes=List.of(
+                new ManuItem("fish",22.50),
+                new ManuItem("chicken",24.30)
 
         );
-        List<Dish> desserts=List.of(
-                new Dish("ice-cream",11.90)
+        List<ManuItem> desserts=List.of(
+                new ManuItem("ice-cream",11.90)
         );
         List<Cuisine> cuisines=List.of(
                 new Cuisine("Polish",mainDishes,desserts)
@@ -37,9 +37,9 @@ public class OrderFoodTest
     @Test
     public void serializeJsonDrinkMenuTest()
     {
-        List<Drink> drinks=List.of(
-          new Drink("cola", 5.00),
-          new Drink("coffee",3.50)
+        List<ManuItem> drinks=List.of(
+          new ManuItem("cola", 5.00),
+          new ManuItem("coffee",3.50)
         );
         List<String> extras = List.of(
                 "ice cubes",

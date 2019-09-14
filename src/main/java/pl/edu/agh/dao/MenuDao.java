@@ -2,8 +2,7 @@ package pl.edu.agh.dao;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import pl.edu.agh.model.LunchMenu;
-import pl.edu.agh.model.Menu;
+import pl.edu.agh.model.menu.Menu;
 
 
 import java.io.IOException;
