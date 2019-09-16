@@ -6,7 +6,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 @Data
-public class Extra implements BasketItem {
+public class Extra implements OrderItem {
     final private String name;
     private SortedSet<String> extras=new TreeSet<>();
     @Override

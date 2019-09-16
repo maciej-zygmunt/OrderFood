@@ -1,16 +1,18 @@
 package pl.edu.agh.model.order;
 
+import lombok.ToString;
+
 import java.text.MessageFormat;
 import java.util.Stack;
 
-
+@ToString
 public class Basket  {
-    final private Stack<OrderItem> items=new Stack<>();
-    public void push(BasketItem item, String category) {
-        OrderItem orderItem=new OrderItem(category,item);
+    final private Stack<CategorizedOrderItem> items=new Stack<>();
+    public void push(OrderItem item, String category) {
+        CategorizedOrderItem orderItem=new CategorizedOrderItem(category,item);
         items.push(orderItem);
     }
-    public OrderItem pop() {
+    public CategorizedOrderItem pop() {
         return items.pop();
     }
 
@@ -26,7 +28,7 @@ public class Basket  {
         return sb.toString();
     }
     public double getTotal(){
-       return items.stream().mapToDouble(OrderItem::getPrice).sum();
+       return items.stream().mapToDouble(CategorizedOrderItem::getPrice).sum();
     }
     public boolean isEmpty() {
         return items.empty();

@@ -9,6 +9,7 @@ import java.text.MessageFormat;
 import java.util.Optional;
 import java.util.Scanner;
 
+
 @Data
 public class Context {
     public static final String PROVIDE_NUMBER_SINGLE = "Provide number 0..{0},-2 to go back ";
@@ -37,23 +38,23 @@ public class Context {
         System.out.println(basket.toOrderString());
     }
 
-    public int selectAnswers(int range) {
+    public int selectAnswers(int upperLimit) {
         String prompt = PROVIDE_NUMBER_SINGLE;
-        return selectAnswers(range, prompt);
+        return selectAnswers(-1, upperLimit, prompt);
     }
 
-    public int selectAnswers(int range, String prompt) {
+    public int selectAnswers(int lowerLimit, int upperLimit, String prompt) {
         while (true) {
-            String processedPrompt= MessageFormat.format(prompt,range-1);
+            String processedPrompt= MessageFormat.format(prompt,upperLimit-1);
             System.out.println(processedPrompt);
             while (!scanner.hasNextInt()) {
                 System.out.println(processedPrompt);
                 scanner.next();
             }
             int a = scanner.nextInt();
-            if (a < 0) {
+            if (a>=lowerLimit && a < 0) {
                 return a;
-            } else if (a >= 0 && a < range) {
+            } else if (a >= 0 && a < upperLimit) {
                 return a;
             } else {
                 System.out.println(processedPrompt);

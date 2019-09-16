@@ -7,7 +7,7 @@ import pl.edu.agh.model.menu.Menu;
 
 import java.util.Scanner;
 
-public class App {
+public class OrderFood {
 
     public void order() {
         Menu menu = new MenuDao().read("Menu.json");
@@ -26,7 +26,7 @@ public class App {
 
     }
     public static void main(String[] args) {
-        App app = new App();
+        OrderFood app = new OrderFood();
         app.order();
 
     }

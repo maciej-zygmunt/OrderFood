@@ -17,7 +17,7 @@ public class SelectExtras implements State {
         for (int j = 0; j < extras.size(); j++) {
             System.out.println(j+": "+extras.get(j) );
         }
-        int ans=context.selectAnswers(extras.size(),Context.PROVIDE_NUMBER_MULTI);
+        int ans=context.selectAnswers(-2, extras.size(),Context.PROVIDE_NUMBER_MULTI);
         if(ans>=0) {
             String selected = extras.get(ans);
             extra.getExtras().add(selected);
