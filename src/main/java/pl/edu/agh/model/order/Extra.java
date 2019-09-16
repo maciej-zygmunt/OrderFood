@@ -1,13 +1,12 @@
 package pl.edu.agh.model.order;
 
 import lombok.Data;
-import pl.edu.agh.model.order.Item;
 
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 @Data
-public class Extra implements Item {
+public class Extra implements BasketItem {
     final private String name;
     private SortedSet<String> extras=new TreeSet<>();
     @Override
@@ -19,5 +18,10 @@ public class Extra implements Item {
         }
         return sb.toString();
 
+    }
+
+    @Override
+    public double getPrice() {
+        return 0;
     }
 }

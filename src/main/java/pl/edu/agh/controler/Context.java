@@ -6,6 +6,7 @@ import pl.edu.agh.model.menu.Menu;
 import pl.edu.agh.model.order.Basket;
 
 import java.text.MessageFormat;
+import java.util.Optional;
 import java.util.Scanner;
 
 @Data
@@ -19,6 +20,17 @@ public class Context {
     private State state;
     private Cuisine cuisine;
     private Basket basket= new Basket();
+
+    public Context(String name, Scanner scanner, Menu menu) {
+        this.name = name;
+        this.scanner = scanner;
+        this.menu = menu;
+        //Allows to test states without call sequence dependency.
+        Optional<Cuisine> cuisine= menu.getLunchMenu().getCuisines().stream().findFirst();
+        if(cuisine.isPresent()) {
+            this.cuisine = cuisine.get();
+        }
+    }
 
     public void run() {
         state.run(this);
