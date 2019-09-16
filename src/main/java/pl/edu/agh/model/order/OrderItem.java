@@ -5,11 +5,11 @@ import pl.edu.agh.model.menu.MenuItem;
 import java.text.MessageFormat;
 
 
-public class OrderItem {
+public class OrderItem  {
     final private String category;
-    final private Item item;
+    final private BasketItem item;
 
-    public OrderItem(String category, Item item) {
+    public OrderItem(String category, BasketItem item) {
         this.category = category;
         this.item = item;
     }
@@ -17,12 +17,7 @@ public class OrderItem {
         return MessageFormat.format("{0} {1}",category, item.toOrderString());
     }
 
-    public Double getPrice() {
-        if (item instanceof MenuItem) {
-            MenuItem menuItem = (MenuItem) item;
-            return (double)menuItem.getPrice();
-
-        }
-        return 0.0;
+    public double getPrice() {
+            return item.getPrice();
     }
 }

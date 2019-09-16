@@ -4,9 +4,9 @@ import java.text.MessageFormat;
 import java.util.Stack;
 
 
-public class Basket implements Item {
+public class Basket  {
     final private Stack<OrderItem> items=new Stack<>();
-    public void push(Item item, String category) {
+    public void push(BasketItem item, String category) {
         OrderItem orderItem=new OrderItem(category,item);
         items.push(orderItem);
     }
@@ -14,7 +14,7 @@ public class Basket implements Item {
         return items.pop();
     }
 
-    @Override
+
     public String toOrderString() {
         if(items.empty()) {
             return "";
@@ -26,8 +26,7 @@ public class Basket implements Item {
         return sb.toString();
     }
     public double getTotal(){
-       double total=items.stream().mapToDouble(OrderItem::getPrice).sum();
-       return total;
+       return items.stream().mapToDouble(OrderItem::getPrice).sum();
     }
     public boolean isEmpty() {
         return items.empty();
