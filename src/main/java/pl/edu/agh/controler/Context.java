@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 @Data
 public class Context {
-    public static final String PROVIDE_NUMBER_SINGLE = "Provide number 0..{0},-2 to go back ";
+    public static final String PROVIDE_NUMBER_SINGLE = "Provide number 0..{0},-1 to go back ";
     public static final String PROVIDE_NUMBER_MULTI = "Provide number 0..{0},-1 to finish -2 to go back ";
     final private String name;
     final private Scanner scanner;
