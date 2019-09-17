@@ -11,13 +11,7 @@ public class Extra implements OrderItem {
     private SortedSet<String> extras=new TreeSet<>();
     @Override
     public String toOrderString() {
-        StringBuilder sb= new StringBuilder();
-        extras.forEach(c->sb.append(c+","));
-        if(sb.length()>0 ) {
-            sb.deleteCharAt(sb.length() - 1);
-        }
-        return sb.toString();
-
+        return String.join(",",extras);
     }
 
     @Override
