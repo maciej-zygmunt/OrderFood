@@ -17,6 +17,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class StatesTest {
@@ -83,13 +84,8 @@ public class StatesTest {
     }
 
     private Scanner simulateScanner(String inStr) {
-        try {
-            InputStream in = new ByteArrayInputStream(inStr.getBytes("UTF8"));
-            Scanner scanner = new Scanner(in);
-            return scanner;
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
+        InputStream in = new ByteArrayInputStream(inStr.getBytes(StandardCharsets.UTF_8));
+        Scanner scanner = new Scanner(in);
+        return scanner;
     }
 }
