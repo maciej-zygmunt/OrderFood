@@ -3,6 +3,7 @@ package pl.edu.agh;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.intellij.lang.annotations.Language;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.edu.agh.dao.MenuDao;
@@ -47,7 +48,7 @@ public class MenuDaoTest
                 "lemon"
         );
         DrinkMenu drinkMenu= new DrinkMenu(drinks,extras);
-        String expectedJson="{\"drinks\":[{\"name\":\"cola\",\"price\":5.0},{\"name\":\"coffee\",\"price\":3.5}],\"extras\":[\"ice cubes\",\"lemon\"]}";
+        @Language("JSON") String expectedJson= "{\"drinks\":[{\"name\":\"cola\",\"price\":5.0},{\"name\":\"coffee\",\"price\":3.5}],\"extras\":[\"ice cubes\",\"lemon\"]}";
         Gson gson = new GsonBuilder().create();
         String json = gson.toJson(drinkMenu);
         Assert.assertEquals(expectedJson,json);
