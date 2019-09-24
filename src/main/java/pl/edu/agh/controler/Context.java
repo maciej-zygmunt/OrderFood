@@ -22,6 +22,7 @@ public class Context {
     private Cuisine cuisine;
     private Basket basket= new Basket();
 
+
     public Context(String name, Scanner scanner, Menu menu) {
         this.name = name;
         this.scanner = scanner;
